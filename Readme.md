@@ -43,3 +43,5 @@ Streaming					Client, server, bi-directional		Client, server
 Client code-generation		yes									OpenAPI + third-part
 		
 Security					Transport (TLS)						Transport (TLS)
+
+
