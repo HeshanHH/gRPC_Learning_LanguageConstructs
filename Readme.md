@@ -28,20 +28,15 @@ What is gRPC?
 Service A -proto file Service B
 
 
-Feature						grpc								RESTful API
+| Feature				| grpc						|RESTful 
+|--|--|--|
+| Contract				| Required (.proto)	 		| Optional 
+| Protocol	 			| HTTP/2					| HTTP/2 & 1 
+| Payload	 			| Protobuf (small, binary) 	| JSON (large) 
+| Strong-Typing 		| yes	 					| No 
+|Streaming				|Client, server, bi-directional| Client, server
+|Client code-generation	|yes						| OpenAPI + third-part
+|Security				|Transport (TLS)			| Transport (TLS)
 		
-Contract					Required (.proto)					Optional
-		
-Protocol					HTTP/2								HTTP/2 & 1
-		
-Payload						Protobuf (small, binary)			JSON (large)
-		
-Strong-Typing				yes									No
-		
-Streaming					Client, server, bi-directional		Client, server
-		
-Client code-generation		yes									OpenAPI + third-part
-		
-Security					Transport (TLS)						Transport (TLS)
 
 
