@@ -1,16 +1,26 @@
+// need to add protocol version first.
 syntax = "proto3";
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/struct.proto";
 
+// You can add an optional package specifier to a .proto file to prevent name clashes between protocol message types.
+// https://protobuf.dev/programming-guides/proto3/#packages
 package tutorial;
 
+// after the code generation. C# related code will goes under this namespace.
 option csharp_namespace = "MyExample.Cat";
 
+// type is nothing more than a message. when this code generation this type will become a C# class. with the given property names.
+// Ex: will create a class called Cat with a property type of string and name for the property is "name".
 message Cat{
 	google.protobuf.Int32Value id=1;
 	string name=2;
 	NullableField profile_picture=3;
+}
+
+message HalloReply{
+	string name=1;
 }
 
 message NullableField{
@@ -18,4 +28,12 @@ message NullableField{
 		google.protobuf.NullValue null=1;
 		google.protobuf.StringValue value=2;
 	}
+}
+
+// once we have our types, we can define our service operations.
+service Greater {
+	// sends a message,
+	// this is a method of type rpc get Cat as a input parameter and it will return HalloReply.
+	// we can have more methods here like this.
+	rpc SayHallo(Cat) returns (HalloReply)
 }

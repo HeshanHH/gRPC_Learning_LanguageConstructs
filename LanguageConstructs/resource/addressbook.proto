@@ -9,6 +9,9 @@ message Person{
 	int32 id=2;
 	string email=3;
 
+	// enums ensure that values are consistance across the dfferent programming languages that used to implemmtnt gRPC client and services.
+	// first enum value is all way be the default one.
+	// enum numbers should be in int32 range.
 	enum PhoneType{
 		MOBILE=0;
 		HOME=1;
